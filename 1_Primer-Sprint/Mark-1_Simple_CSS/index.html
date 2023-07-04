@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <aside>
+        <div class="card">
+            <div class="cardfront">
+                <h1>EJEMPLO</h1> 
+            </div>
+            
+            <img src="./imágenes/bg-card-back.png" alt="" class="cardback">
+        </div>
+    </aside>
+
+    
+
+
+
+
+    <form action="post" >
+
+        <label>Cardholder Name</label>
+        <input type="text" name="Name" class="LongBox" id="CardName" placeholder="Francisco Recalde">
+        <label>Card Number</label>
+        <input type="text" name="Number" class="LongBox" id="CardNum" placeholder="Francisco's international card number here"> 
+        
+        <div class="cvc">
+            <div class="datos">
+                <label for="">Date (MM/YYYY)</label>
+                <div>
+                <input type="text" name="Month" id="CardMon" class="Shortbox" maxlength="2" placeholder="MM" >
+                <input type="text" name="Year" id="CardYear" class="Shortbox" maxlength="4" placeholder="YYYY">
+                </div>
+            </div>
+
+            <div class="datos">
+                <label > CVC </label>
+                <input type="password" name="CardCVC" id="CardCVC" class="Midbox" maxlength="3" placeholder='Keep it secret but show me :)'>
+            </div>
+            
+            
+        </div>
+
+        
+
+        
+        <br>
+        <button type="submit" class="SendButton"> Confirm</button>
+    </form>
+
+   
+</body>
+</html>

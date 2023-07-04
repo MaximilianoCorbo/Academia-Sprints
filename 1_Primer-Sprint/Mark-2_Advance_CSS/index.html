@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="tarjetas">
+        <div class="cards front">
+            <img src="../imágenes/card-logo.svg" alt="card-logo">
+            <h1 class="number">9087 4529 1234 1234</h1>
+            <h3 class="titular">Titular de la tarjeta</h3>
+            <h4 class="expiration">Vencimiento</h4>
+        </div>
+        <div class="cards back">
+            <h3 class="CVCcode"> CVC Code</h3>
+        </div>
+    </div>
+
+    <form action="post" >
+        <label for="CardName">Cardholder Name</label>
+        <input required 
+        type="text" 
+        name="Name" 
+        class="LongBox" 
+        placeholder="Francisco Recalde">
+        
+        <label>Card Number</label>
+        <input required 
+        type="text" 
+        name="Number" 
+        class="LongBox" 
+        id="CardNum"  
+        minlength="16" 
+        maxlength="16" 
+        placeholder="Francisco's international card number here"> 
+        
+        <div class="cvc">
+            <div class="datos">
+                <label for="">Date (MM/YYYY)</label>
+                <div>
+                    <input required 
+                    type="text" 
+                    name="Month"  
+                    class="Shortbox" 
+                    minlength="2" 
+                    maxlength="2" 
+                    placeholder="MM" >
+
+                    <input required 
+                    type="text" 
+                    name="Year" 
+                    id="CardYear" 
+                    class="Shortbox" 
+                    minlength="4" 
+                    maxlength="4" 
+                    placeholder="YYYY">
+                </div>
+            </div>
+            <div class="datos">
+                <label for="CardCVC"> CVC </label>
+                <input required 
+                type="text" 
+                name="CardCVC" 
+                class="Midbox" 
+                pattern="\d{3}"
+                minlength="3" 
+                maxlength="3" 
+                placeholder='Keep it secret but show me :)'>
+            </div>
+            
+        </div>
+        
+        <br>
+        <button type="submit" class="SendButton"> Confirm</button>
+        <!-- <div class="thanks">
+             <h1>¡GRACIAS!</h1>
+        </div> -->
+    </form>
+
+    <script>
+    
+    </script>
+
+</body>
+</html>

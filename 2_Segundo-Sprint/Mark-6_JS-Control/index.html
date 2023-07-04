@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Genero un contenedor para las tarjetas  -->
+    <div class="tarjetas">
+        <!-- Cara frontal de la tarjeta -->
+        <div class="cards front">
+            <img src="../imágenes/card-logo.svg" alt="card-logo"> <!--Logo superior izquierdo -->
+            <h1 class="number" id="cardNumber">9591 6489 6389 101E</h1>  
+            <h3 class="titular" id="cardTitular">Felicia Leire</h3>
+            <h4 class="expiration" id="cardExpiration">06/2023</h4>
+        </div>
+
+        <!-- Cara trasera de la tarjeta -->
+        <div class="cards back">
+            <h3 class="CVCcode" id="cardCvc">394</h3>
+        </div>
+    </div>
+
+    <!-- Genero formulario para los datos de la tarjeta -->
+    <div class="info">
+        <form>
+        <div id="thanks" class="thanks">
+            <img class="tick" src="../imágenes/icon-complete.svg" alt="green tick">
+            <p class="thanksText">Thank You!</p>
+            <p>We've added your card details</p>
+        </div>
+
+        <div id="form" class="form">
+                <!-- Input Nombre #Name .Name -->
+            <label for="CardName">Cardholder Name</label>
+            <input 
+            type="text" 
+            name="CardName" 
+            id="InputName"
+            class="LongBox" 
+            minlength="2"
+            placeholder="Francisco Recalde"
+            onkeydown="return /[ a-z]/i.test(event.key)"
+            oninput="fillName()"
+            onblur="errName()">
+            <p id="errorName" class="error"></p>
+
+            <!-- Input Numero de tarjeta #CardNum .LongBox-->
+            <label>Card Number</label>
+            <input 
+            type="text" 
+            name="Number" 
+            class="LongBox" 
+            id="InputNum"  
+            minlength="16" 
+            maxlength="16" 
+            oninput="fillNum()"
+            onblur="errNum()"
+            onkeydown="return /[0-9a]/i.test(event.key)"
+            placeholder="Francisco's international card number here"> 
+            <p id="errorNum" class="error"></p>
+
+            
+            <!-- Utilizo un div para englobar los inputs Vencimiento y CVC juntos -->
+            <div class="cvc">
+                <!-- Utilizo un div para englobar los inputs de Mes y Año juntos -->
+                <div class="datos">
+                    <label for="Month">Date (MM/YYYY)</label>
+                    <div>
+                        <!-- Input Mes de vencimiento #CardMonth .Shortbox -->
+                        <input 
+                        type="text" 
+                        name="Month"  
+                        class="Shortbox"
+                        id="InputMonth" 
+                        minlength="1" 
+                        maxlength="2" 
+                        oninput="fillExpM()"
+                        onblur="errExpM()"
+                        onkeydown="return /[0-9a]/i.test(event.key)"
+                        placeholder="MM" 
+                        >
+                        <!-- Input Año de vencimiento #CardYear .Shortbox -->
+                        <input 
+                        type="text" 
+                        name="Year" 
+                        class="Shortbox" 
+                        id="InputYear" 
+                        minlength="4" 
+                        maxlength="4" 
+                        oninput="fillExpY()"
+                        onblur="errExpY()"
+                        onkeydown="return /[0-9a]/i.test(event.key)"
+                        placeholder="YYYY"
+                        >
+                        <p id="errorExp" class="error"></p>
+
+                    </div>
+                </div>
+
+                <div class="datos">
+                    <!-- Input CVC de la tarjeta #CardCVC .Midbox -->
+                    <label for="CardCVC"> CVC </label>
+                    <input 
+                    type="text" 
+                    name="CardCVC" 
+                    id="InputCvc"
+                    class="Midbox" 
+                    pattern="\d{3}"
+                    minlength="3" 
+                    maxlength="3" 
+                    oninput="fillCvc()"
+                    onblur="errCvc()"
+                    onkeydown="return /[0-9a]/i.test(event.key)"
+                    placeholder='Keep it secret but show me :)'
+                    >
+                     <p id="errorCvc" class="error"></p>
+
+                </div>
+                
+            </div>
+            
+            <br>
+            
+        </div>
+    </form>
+    <button id="sendBut" class="SendButton" onclick="validation()">Confirm</button>
+            <p class="error" id="errorButton"></p>
+    </div>
+    
+    <script src="./script.js"> </script>
+
+</body>
+</html>

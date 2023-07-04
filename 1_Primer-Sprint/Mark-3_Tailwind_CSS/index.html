@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 1</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body class="h-screen w-screen bg-no-repeat bg-[url(../imágenes/bg-main-desktop.png)] bg-contain flex items-center justify-center">
+
+    <div class="w-[500px] h-[500px] ">
+        <div class="flex">
+            <img src="../imágenes/card-logo.svg" alt="" class="absolute mt-10 ml-10">
+            <img src="../imágenes/bg-card-front.png" alt="">
+            <span class="text-white text-4xl fixed mt-[130px] mx-[30px]">1234 5678 9101 1213</span>
+            <span class="text-white text-2xl font-thin  fixed mt-[190px] mx-[20px]">Juan Perez</span>
+            <span class="text-white text-2xl font-thin fixed mt-[190px] ml-[350px]">09/02</span>
+        </div>
+        <div class="flex ml-20">
+            <img src="../imágenes/bg-card-back.png" alt="">
+        </div>
+    </div>
+
+    <div class="containerForm flex-col w-[500px] h-[500px] ml-20">
+        <form action="" class="flex flex-col w-[500px] h-[500px] [&>input]:border [&>input]:border-blue-800 [&>input]:rounded">
+            <label for="cardholder-name">CARDHOLDER NAME:</label>
+            <input type="text" id="cardholder-name" name="cardholder-name" required >       
+            <label for="card-number">CARD MUMBER:</label>
+            <input type="number" id="card-number" name="card-number" required>        
+            <label for="expiration-date">EXPIRATION DATE (MM/YY):</label>
+            <label for="cvc">CVC:</label>  
+            <input type="number" id="expiration-month" name="expiration-month" required> <input type="number" id="expiration-year" name="expiration-year" required>
+            <input type="text"  id="cvc" name="cvc" required placeholder="000"
+            minlength="3"
+            maxlength="3"                
+            pattern="[0-9]{3}">     
+            <button type="submit" maxlength="" value="Confirm">
+        </form>
+    </div>
+
+
+
+</body>
+</html>

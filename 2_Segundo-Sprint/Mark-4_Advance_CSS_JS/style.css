@@ -1,0 +1,307 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    color: grey;
+    
+    background-image: url(../imágenes/bg-main-desktop.png);
+    background-repeat: repeat-y;
+    background-size: 30vw;
+}
+
+.tarjetas{
+    position: relative;
+    top: 20vh;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 600px;
+    width: 550px;
+    /* border: 3px solid salmon;*/
+} 
+
+.front{ 
+    background: url(../imágenes/bg-card-front.png) /*447 x 245*/;
+    color:  white;
+    margin: 10px;
+}
+.front .number{
+    position: absolute;
+    color: white;
+    top: 55%;
+    left: 10%;
+}
+.front img{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+.front .titular{
+    position: absolute;
+    top: 80%;
+    left: 10%;
+}
+.front .expiration{
+    position: absolute;
+    top: 80%;
+    left: 65%;
+}
+
+
+.back{
+    background: url(../imágenes/bg-card-back.png);
+    left: 60px;
+}
+.back .CVCcode{
+    position: absolute;
+    color: white;
+    top: 48%;
+    right: 12%;
+}
+
+.cards{
+    position: relative;
+    background-size: cover;
+    border-radius: 10px;
+    width: 477px;
+    height: 245px;
+}
+
+/* ! CAMBIO DE CSS  */
+
+form{    
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 25vh;
+    height: 40vh;
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+    letter-spacing: 2px;
+    /* border: 3px solid black; */
+}
+.cvc{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.datos {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 10px 0;
+}
+
+input{
+    border-radius: 5px;
+    border: 1px solid rgb(34, 8, 59);
+    height: 30px;
+    background-color: rgba(100, 148, 237, 0.219);
+}
+input:invalid{
+    border: 2px dashed rgb(255, 94, 0);
+    background-color: rgba(255, 94, 0, 0.267);
+}
+input:valid{
+    background-color: rgba(137, 43, 226, 0.453);
+}
+
+.Shortbox{
+    width: 70px;
+}
+.Midbox{
+    width: 200px;
+    margin-bottom: 10px;
+}
+.LongBox{
+    width: 370px;
+}
+.SendButton{
+    font-size: 36px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(34, 8, 59);
+    color: white;
+    border-radius: 10px;
+    width: 300px;
+    height: 70px;
+}
+
+
+@media (max-width: 1200px){
+    .tarjetas{
+        width: 350px;
+        height: 350px;
+        top: 15vh;
+        left: 5vw;
+    }
+    form{
+        top: 15vh;
+    }
+    .cards{
+        position: relative;
+        background-size: cover;
+        border-radius: 10px;
+        width: 268px;
+        height: 147px;
+    }
+    .front{
+        left: 0;
+        top:0;
+    }
+    .front h1{ 
+        font-size: 20px;
+    }
+    .front h3,h4{
+        font-size: 10px;
+    }
+    .back{
+        left: 30px;
+    }
+    .back .CVCcode{
+        top: 45%;
+        font-size: 15px;
+    }
+}
+@media (max-width: 900px){
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .tarjetas{
+        width: 350px;
+        height: 350px;
+        top: 5vh;
+        left: auto;
+    }
+    form{
+        top: 10vh;
+        left: auto;
+    }
+    .cards{
+        position: relative;
+        background-size: cover;
+        border-radius: 10px;
+        width: 268px;
+        height: 147px;
+    }
+    .front{
+        left: 0;
+        top:0;
+    }
+    .front h1{ 
+        font-size: 20px;
+    }
+    .front h3,h4{
+        font-size: 10px;
+    }
+    .back{
+        left: 30px;
+    }
+}
+@media (max-width: 500px){
+    *{
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url(../imágenes/bg-main-mobile.png);
+        background-size: 100% 200px;
+        background-repeat: repeat-x;
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+    .tarjetas{
+        top: 40px;
+        flex-direction: column-reverse;
+        width: 270px;
+        height: 270px;
+        margin: 0;
+    }
+    .cards{
+        position: relative;
+        background-size: cover;
+        border-radius: 10px;
+        width: 214px;
+        height: 117px;
+    }
+    form{
+       padding: 0;
+        top:10px;
+        align-items: center;
+    }
+    .front{
+        position: absolute;
+        left: auto;
+        top: 90px;
+        z-index: 1;
+    }
+    .front .number{
+        left: 15%
+    }
+    .front h1{ 
+        font-size: 15px;
+    }
+    .front h3,h4{
+        font-size: 10px;
+    }
+    .front img{
+        width: 40px;
+    }
+    
+    .back{
+        position: absolute;
+        top: 0;
+        left: 50px;
+    }
+    .back .CVCcode{
+        font-size: 12px;
+    }
+    input{
+        font-size: 10px;
+    }
+    .Shortbox{
+        width: 45%;
+    }
+    .Midbox{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .LongBox{
+        width: 95%;
+    }
+    .SendButton{
+        font-size: 36px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: rgb(34, 8, 59);
+        color: white;
+        border-radius: 10px;
+        width: 300px;
+        height: 70px;
+    
+    }
+    .cvc{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+    .datos {
+        display: flex;
+        flex-direction: column;
+        width: 47%;
+    }
+}

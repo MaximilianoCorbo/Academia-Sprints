@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Genero un contenedor para las tarjetas  -->
+    <div class="tarjetas">
+        <!-- Cara frontal de la tarjeta -->
+        <div class="cards front">
+            <img src="../imágenes/card-logo.svg" alt="card-logo"> <!--Logo superior izquierdo -->
+            <h1 class="number" id="cardNumber">0000 0000 0000 0000</h1>  
+            <h3 class="titular" id="titular">Titular de la tarjeta</h3>
+            <h4 class="expiration" id="expiration">Vencimiento</h4>
+        </div>
+
+        <!-- Cara trasera de la tarjeta -->
+        <div class="cards back">
+            <h3 class="CVCcode" id="CVCcode"> CVC Code</h3>
+        </div>
+    </div>
+
+    <!-- Genero formulario para los datos de la tarjeta -->
+    <form action="" >
+        <div class="thanks">
+            <img src="" alt="" height="50px" width="50px">
+            <h1>Hola mundo</h1>
+            <button>¡Gracias!</button>
+        </div>
+        <div class="form">
+                <!-- Input Nombre #Name .Name -->
+            <label for="CardName">Cardholder Name</label>
+            <input required 
+            type="text" 
+            name="CardName" 
+            id="Name"
+            class="LongBox" 
+            placeholder="Francisco Recalde"
+            onkeydown="return /[ a-z]/i.test(event.key)"
+            oninput="fillName()"
+            onblur="errName()">
+
+            <!-- Input Numero de tarjeta #CardNum .LongBox-->
+            <label>Card Number</label>
+            <input required 
+            type="text" 
+            name="Number" 
+            class="LongBox" 
+            id="CardNum"  
+            minlength="16" 
+            maxlength="16" 
+            onkeydown="return /[0-9a]/i.test(event.key)"
+            placeholder="Francisco's international card number here"> 
+            
+            <!-- Utilizo un div para englobar los inputs Vencimiento y CVC juntos -->
+            <div class="cvc">
+                <!-- Utilizo un div para englobar los inputs de Mes y Año juntos -->
+                <div class="datos">
+                    <label for="Month">Date (MM/YYYY)</label>
+                    <div>
+                        <!-- Input Mes de vencimiento #CardMonth .Shortbox -->
+                        <input required 
+                        type="text" 
+                        name="Month"  
+                        class="Shortbox"
+                        id="CardMonth" 
+                        minlength="2" 
+                        maxlength="2" 
+                        onkeydown="return /[0-9a]/i.test(event.key)"
+                        placeholder="MM" 
+                        >
+                        <!-- Input Año de vencimiento #CardYear .Shortbox -->
+                        <input required 
+                        type="text" 
+                        name="Year" 
+                        class="Shortbox" 
+                        id="CardYear" 
+                        minlength="4" 
+                        maxlength="4" 
+                        onkeydown="return /[0-9a]/i.test(event.key)"
+                        placeholder="YYYY"
+                        >
+                    </div>
+                </div>
+
+                <div class="datos">
+                    <!-- Input CVC de la tarjeta #CardCVC .Midbox -->
+                    <label for="CardCVC"> CVC </label>
+                    <input required 
+                    type="text" 
+                    name="CardCVC" 
+                    id="CardCVC"
+                    class="Midbox" 
+                    pattern="\d{3}"
+                    minlength="3" 
+                    maxlength="3" 
+                    onkeydown="return /[0-9a]/i.test(event.key)"
+                    placeholder='Keep it secret but show me :)'
+                    >
+                </div>
+                
+            </div>
+            
+            <br>
+            <button type="submit" class="SendButton"> Confirm</button>
+        </div>
+        
+    </form>
+
+    <script src="./script.js"> </script>
+
+</body>
+</html>
