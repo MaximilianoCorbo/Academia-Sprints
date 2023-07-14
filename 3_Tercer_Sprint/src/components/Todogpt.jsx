@@ -32,9 +32,7 @@ const Todo = ({ theme }) => {
         tareasFiltradas = List;
         break;
     }
-    
     setFiltrados(tareasFiltradas);
-    
   };
 
   function setComplete(id) {
@@ -54,8 +52,6 @@ const Todo = ({ theme }) => {
     setFiltrados(incompleteTasks);
   }
 
-
-  console.log(filtrados);
   return (
     <div className={`lista`}>
       <input
@@ -91,22 +87,13 @@ const Todo = ({ theme }) => {
         })}
         <li className="botones">
           <span>{filtrados.length} task left</span>
-          <div className="bigScreen">
+          <div>
             <button onClick={() => handleFilterChange("all")}>All</button>
             <button onClick={() => handleFilterChange("active")}>Active</button>
             <button onClick={() => handleFilterChange("completed")}>Completed</button>
           </div>
           <button onClick={() => ClearComplete()}>Clear Completed</button>
         </li>
-        <li className="botones smallScreen">
-          <div className="">
-            <button onClick={() => handleFilterChange("all")}>All</button>
-            <button onClick={() => handleFilterChange("active")}>Active</button>
-            <button onClick={() => handleFilterChange("completed")}>Completed</button>
-          </div>
-        </li>
-        
-
       </ul>
     </div>
   );

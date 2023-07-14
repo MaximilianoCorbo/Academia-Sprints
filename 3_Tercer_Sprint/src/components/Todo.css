@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
 }
+
 .lista{
     width: 100vw;
     display: flex;
@@ -60,7 +61,7 @@ ul li span{
     background: white ;
     height: 50px;
     width: 50px;
-    border:1px solid rgb(167, 167, 167);
+    border:1px solid hsl(280, 87%, 65%);
     border-radius:  50%;
 }
 .buttonComplete img {
@@ -68,6 +69,11 @@ ul li span{
     width: 30px;
 }
 
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .botones button {
     background-color: rgba(0, 0, 0, 0);
     min-width: 100px;
@@ -75,7 +81,112 @@ ul li span{
     font-size: 25px;
     margin: 10px;
 }
+
+.botones span{
+    color:  rgb(167, 167, 167);;
+}
+
 .taskComplete{
     color: rgb(151, 151, 151);
     text-decoration: 2px line-through;
+}
+.smallScreen{
+    display: none;
+}
+
+
+@media (width < 500px) {
+    .smallScreen{
+        display: flex;
+    }
+
+    .bigScreen {
+        display: none;
+    }
+
+    .lista{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    input{
+        border-radius: 5px;
+        width: 300px;
+        height: 30px;
+        border: 2px solid blue ;
+    }
+    
+    ul{
+        background-color: hsl(0, 0%, 98%);
+        min-width: 300px;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        border: 10px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 40px -20px blueviolet ;
+        list-style: none;
+        padding: 10px 0 7px 0;
+        gap: 2px;
+    }
+    
+    ul li{
+        /* background-color: hsl(0, 0%, 98%); */
+        display: flex;
+        position: relative;
+        justify-content: left;
+        align-items: center;
+        min-height: 70px;
+        border-bottom: 2px solid rgb(236, 236, 236);
+        width: 100%;
+        padding: 20px;
+        
+    }
+
+    
+    ul li span{
+        max-width: 80%;
+        font-size: 20px;
+    }
+    
+    .lista ul{
+        font-size: 30px;
+    }
+    
+    .buttonComplete{
+        background: linear-gradient(90deg,hsl(192, 100%, 67%), hsl(280, 87%, 65%))  ;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+    
+    .buttonIncomplete{
+        background: white ;
+        height: 30px;
+        width: 30px;
+        border:1px solid hsl(280, 87%, 65%);
+        border-radius:  50%;
+    }
+    .buttonComplete img {
+        height: 10px;
+        width: 10px;
+    }
+    
+    .botones button {
+        background-color: rgba(0, 0, 0, 0);
+        min-width: 10px;
+        height: 40px;
+        font-size: 13px;
+        margin: 10px;
+    }
+    .botones span{
+        font-size: 15px;
+    }
+
+    .taskComplete{
+        color: rgb(151, 151, 151);
+        text-decoration: 2px line-through;
+    }
 }
